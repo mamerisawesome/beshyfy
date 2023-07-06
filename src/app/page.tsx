@@ -25,9 +25,11 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center gap-16 p-20 pt-0 max-md:p-5 max-md:gap-5 place-content-center bg-court-image bg-no-repeat bg-center">
       <div className="relative flex flex-col place-items-center">
-        <p className="text-[100px]">{FLIP_EMOJI}</p>
-        <p className="text-4xl max-md:text-2xl text-red-400 font-bold uppercase drop-shadow-[3px_2px_0_rgba(0,0,0,0.25)]">
-          Add <span className="text-white">cartwheels</span> to your sentence!
+        <p className="text-[100px] hover:rotate-[360deg] transition-all cursor-pointer">
+          {FLIP_EMOJI}
+        </p>
+        <p className="text-4xl max-md:text-2xl text-red-400 font-bold uppercase drop-shadow-[3px_2px_0_rgba(0,0,0,0.25)] cursor-default">
+          Add <span className="text-white hover:text-red-100 transition-colors">cartwheels</span> to your sentence!
         </p>
       </div>
 

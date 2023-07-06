@@ -20,7 +20,7 @@ export default function Home() {
       <div className="relative flex flex-col place-items-center">
         <p className="text-[100px]">{FLIP_EMOJI}</p>
         <p className="text-4xl max-md:text-2xl text-red-400 font-bold uppercase drop-shadow-[3px_2px_0_rgba(0,0,0,0.25)]">
-          Beshy-fy <span className="text-white">your sentence</span>!
+          Add <span className="text-white">cartwheels</span> to your sentence!
         </p>
       </div>
 

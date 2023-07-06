@@ -1,5 +1,8 @@
 {
   "name": "beshiefy",
+  "author": {
+    "name": "Almer Mendoza"
+  },
   "version": "0.1.0",
   "private": true,
   "scripts": {

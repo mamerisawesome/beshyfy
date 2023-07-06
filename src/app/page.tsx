@@ -48,9 +48,11 @@ export default function Home() {
           <i>
           &lsquo;{transformedText}&rsquo;
           </i>
-          <button className="border-gray-400 border-[1px] rounded" title="Copy to Clipboard" onClick={copyTextToClipboard}>
-            📋
-          </button>
+          {!!query.length && (
+            <button className="border-gray-400 border-[1px] rounded" title="Copy to Clipboard" onClick={copyTextToClipboard}>
+              📋
+            </button>
+          )}
         </div>
       </div>
 

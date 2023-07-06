@@ -26,7 +26,9 @@ export default function Home() {
 
       <div className="text-black bg-white rounded w-7/12 max-md:w-11/12 hover:scale-[1.01] p-10 transition-all drop-shadow-sm hover:drop-shadow-lg">
         <div>
-          <label className="text-grey font-bold text-xs" htmlFor="query">Type in your sentence below</label>
+          <label className="text-grey font-bold text-xs" htmlFor="query">
+            Type in your sentence below
+          </label>
           <input
             id="query"
             className="border-b border-black w-full p-0.5 outline-none"
@@ -37,7 +39,7 @@ export default function Home() {
         </div>
         <div className="p-0.5 pt-10">
           <i>
-            "{transformedText}"
+          &lsquo;{transformedText}&rsquo;
           </i>
         </div>
       </div>

@@ -1,19 +1,26 @@
 'use client'
 
-import { ChangeEvent, useState } from "react"
+import { ChangeEvent, useCallback, useEffect, useMemo, useState } from "react"
 
 const FLIP_EMOJI = "🤸‍♂️";
 
 export default function Home() {
   const [query, setQuery] = useState('Bakit malungkot ang beshy ko?')
 
-  const transformedText = query.trim()
-    ? query.split(/\s+/).join(` ${FLIP_EMOJI} `)
-    : `${FLIP_EMOJI}${FLIP_EMOJI}${FLIP_EMOJI}`
+  const transformedText = useMemo(() =>
+    query.trim()
+      ? query.split(/\s+/).join(` ${FLIP_EMOJI} `)
+      : `${FLIP_EMOJI}${FLIP_EMOJI}${FLIP_EMOJI}`,
+    [query]
+  )
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value ?? '')
   }
+
+  const copyTextToClipboard = useCallback(() => {
+    navigator.clipboard.writeText(transformedText);
+  }, [transformedText])
 
   return (
     <main className="flex min-h-screen flex-col items-center gap-16 p-20 pt-0 max-md:p-5 max-md:gap-5 place-content-center bg-court-image bg-no-repeat bg-center">
@@ -24,23 +31,26 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="text-black bg-white rounded w-7/12 max-md:w-11/12 hover:scale-[1.01] p-10 transition-all drop-shadow-sm hover:drop-shadow-lg">
+      <div className="text-black hover:bg-white rounded w-7/12 max-md:w-11/12 bg-[#F5F5F5] p-10 transition-all drop-shadow-sm hover:drop-shadow-lg">
         <div>
           <label className="text-grey font-bold text-xs" htmlFor="query">
             Type in your sentence below
           </label>
           <input
             id="query"
-            className="border-b border-black w-full p-0.5 outline-none"
+            className="border-b border-black w-full p-0.5 outline-none bg-transparent"
             type="text"
             value={query}
             onChange={handleChange}
           />
         </div>
-        <div className="p-0.5 pt-10">
+        <div className="flex gap-4 p-0.5 pt-10">
           <i>
           &lsquo;{transformedText}&rsquo;
           </i>
+          <button className="border-gray-400 border-[1px] rounded" title="Copy to Clipboard" onClick={copyTextToClipboard}>
+            📋
+          </button>
         </div>
       </div>
 

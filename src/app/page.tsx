@@ -47,7 +47,7 @@ export default function Home() {
       <span className="fixed bottom-5 right-5 text-white opacity-20">
         Photo by {" "}
         <a href="https://unsplash.com/@jcmerollin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
-          Juan Carlos Bayocot
+          Juan Carlos Bayocot {" "}
         </a>
         on {" "}
         <a href="https://unsplash.com/photos/1dv6HlzhGwE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">

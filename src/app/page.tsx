@@ -14,7 +14,7 @@ export default function Home() {
     [query]
   )
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setQuery(e.target.value ?? '')
   }
 
@@ -28,7 +28,7 @@ export default function Home() {
         <p className="text-[100px] hover:rotate-[360deg] transition-all cursor-pointer">
           {FLIP_EMOJI}
         </p>
-        <p className="text-4xl max-md:text-2xl text-red-400 font-bold uppercase drop-shadow-[3px_2px_0_rgba(0,0,0,0.25)] cursor-default">
+        <p className="text-4xl max-md:text-2xl text-red-400 font-bold uppercase drop-shadow-[3px_2px_0_rgba(0,0,0,0.25)] cursor-default text-center">
           Add <span className="text-white hover:text-red-100 transition-colors">cartwheels</span> to your sentence!
         </p>
       </div>
@@ -38,17 +38,17 @@ export default function Home() {
           <label className="text-grey font-bold text-xs" htmlFor="query">
             Type in your sentence below
           </label>
-          <input
+          <textarea
             id="query"
-            className="border-b border-black w-full p-0.5 outline-none bg-transparent"
-            type="text"
+            className="border-b border-black w-full p-0.5 outline-none bg-transparent resize-none"
             value={query}
             onChange={handleChange}
+            rows={2}
           />
         </div>
         <div className="flex gap-4 p-0.5 pt-10">
-          <i>
-          &lsquo;{transformedText}&rsquo;
+          <i className="break-words w-11/12">
+            &lsquo;{transformedText}&rsquo;
           </i>
           {!!query.trim().length && (
             <button className="border-gray-400 border-[1px] rounded h-7 w-7 self-center" title="Copy to Clipboard" onClick={copyTextToClipboard}>

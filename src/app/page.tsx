@@ -43,7 +43,7 @@ export default function Home() {
             className="border-b border-black w-full p-0.5 outline-none bg-transparent resize-none"
             value={query}
             onChange={handleChange}
-            rows={2}
+            rows={1}
           />
         </div>
         <div className="flex gap-4 p-0.5 pt-10">

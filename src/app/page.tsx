@@ -1,6 +1,6 @@
 'use client'
 
-import { ChangeEvent, useCallback, useEffect, useMemo, useState } from "react"
+import { ChangeEvent, useCallback, useMemo, useState } from "react"
 
 const FLIP_EMOJI = "🤸‍♂️";
 
@@ -51,7 +51,7 @@ export default function Home() {
           &lsquo;{transformedText}&rsquo;
           </i>
           {!!query.trim().length && (
-            <button className="border-gray-400 border-[1px] rounded" title="Copy to Clipboard" onClick={copyTextToClipboard}>
+            <button className="border-gray-400 border-[1px] rounded h-7 w-7 self-center" title="Copy to Clipboard" onClick={copyTextToClipboard}>
               📋
             </button>
           )}
